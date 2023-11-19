@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"limits.h": "c",
+		"*.tcc": "c",
+		"string": "c",
+		"string_view": "c"
+	}
+}
