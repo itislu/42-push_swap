@@ -47,12 +47,12 @@ int	main(int argc, char *argv[])
 	{
 		if (protocol->quadrant == TOP_A)
 			sort_block_top_a(&heads, &protocol);
-		if (protocol->quadrant == BOTTOM_A)
-			sort_block_bottom_a(&heads, &protocol);
-		if (protocol->quadrant == TOP_B)
+		else if (protocol->quadrant == TOP_B)
 			sort_block_top_b(&heads, &protocol);
-		if (protocol->quadrant == BOTTOM_B)
+		else if (protocol->quadrant == BOTTOM_B)
 			sort_block_bottom_b(&heads, &protocol);
+		else if (protocol->quadrant == BOTTOM_A)
+			sort_block_bottom_a(&heads, &protocol);
 	}
 
 	/* Check for duplicates in sorted list */
