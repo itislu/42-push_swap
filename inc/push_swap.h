@@ -65,14 +65,6 @@ void		sort_rest_bottom_b(t_heads *heads, t_lifo **protocol);
 void		sort_rest_top_a(t_heads *heads, t_lifo **protocol);
 void		sort_rest_top_b(t_heads *heads, t_lifo **protocol);
 
-/* Protocol */
-bool		add_amounts_to_protocol_initial_top_a(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_top_a(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_top_b(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_bottom_a(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_bottom_b(t_lifo **protocol, int block_size_total);
-bool		add_single_amount_to_protocol(t_lifo **protocol, int block_size, char quadrant);
-
 /* Checks */
 t_list_d	*parsing(int argc, char *argv[]);
 int			bigger_than_integer(t_list_d *head);
@@ -96,6 +88,14 @@ void		rotate_both(t_heads *heads);
 void		reverse_rotate_a(t_heads *heads);
 void		reverse_rotate_b(t_heads *heads);
 void		reverse_rotate_both(t_heads *heads);
+
+/* Protocol */
+bool		add_amounts_to_protocol_initial_top_a(t_lifo **protocol, int block_size_total);
+bool		add_amounts_to_protocol_top_a(t_lifo **protocol, int block_size_total);
+bool		add_amounts_to_protocol_top_b(t_lifo **protocol, int block_size_total);
+bool		add_amounts_to_protocol_bottom_a(t_lifo **protocol, int block_size_total);
+bool		add_amounts_to_protocol_bottom_b(t_lifo **protocol, int block_size_total);
+bool		add_single_amount_to_protocol(t_lifo **protocol, int block_size, char quadrant);
 
 /* Utils */
 void		find_pos_sorted(t_list_d *start, int block_size, t_next get_next);

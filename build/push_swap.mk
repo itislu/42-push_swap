@@ -36,7 +36,6 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 #  Algorithm:
 SUBDIR	:=	algorithm/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
-			protocol.c \
 			sort_block_bottom_a.c \
 			sort_block_bottom_b.c \
 			sort_block_initial_top_a.c \
@@ -80,6 +79,7 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			find_pos_sorted.c \
 			function_pointers.c \
 			is_n_amount_sorted.c \
+			protocol.c \
 )
 
 # *************************** VARIABLE CREATION ****************************** #
