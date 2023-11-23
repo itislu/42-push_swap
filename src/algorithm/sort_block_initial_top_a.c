@@ -48,6 +48,7 @@ bool	separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **proto
 	/* Base case */
 	if(block_size <= 3)	// Would be great to stop earlier, with 4 or 5
 	{
+		lifo_lstclear_n(protocol, 1);
 		if (!add_single_amount_to_protocol(protocol, block_size, TOP_A))
 			return (false);
 		return (true);
