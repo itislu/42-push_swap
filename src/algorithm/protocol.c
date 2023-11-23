@@ -14,11 +14,6 @@ bool	add_amounts_to_protocol_initial_top_a(t_lifo **protocol, int block_size)
 		return (false);
 	lifo_lstadd_front(protocol, new_entry);
 
-	new_entry = lifo_lstnew(block_size - block_size / 3 * 2, BOTTOM_A);	//Might not be necessary
-	if (!new_entry)
-		return (false);
-	lifo_lstadd_front(protocol, new_entry);
-
 	return (true);
 }
 
