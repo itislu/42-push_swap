@@ -72,7 +72,6 @@ bool	separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **proto
 		}
 		i++;
 	}
-	lifo_lstclear_n(protocol, 1);
 	if (!add_amounts_to_protocol_initial_top_a(protocol, block_size))
 		return (false);
 	return (separate_block_initial_top_a(heads, block_size - block_size / 3 * 2, protocol));
