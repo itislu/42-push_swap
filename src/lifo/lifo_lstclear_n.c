@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bigger_than_integer.c                              :+:      :+:    :+:   */
+/*   lifo_lstclear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 20:43:34 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/20 11:45:22 by ldulling         ###   ########.fr       */
+/*   Created: 2023/09/24 16:04:22 by ldulling          #+#    #+#             */
+/*   Updated: 2023/11/20 20:39:14 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	bigger_than_integer(t_list **head_a)
+void	lifo_lstclear_n(t_lifo **head, int n)
 {
-	t_list	*cur;
-	int		i;
+	t_lifo	*cur;
 
-	/* Check for numbers bigger than an integer */
-	cur = *head_a;
-	while (cur)
+	if (head != NULL)
 	{
-		if (cur->content > INT_MAX || cur->content < INT_MIN)
-			return (1);
-		cur = cur->next;
+		while (*head != NULL && n-- > 0)
+		{
+			cur = *head;
+			*head = (*head)->next;
+			free(cur);
+		}
 	}
-	return (0);
+	return ;
 }

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   check_duplicates.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 11:47:17 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/20 12:06:44 by ldulling         ###   ########.fr       */
+/*   Created: 2023/11/19 20:43:54 by ldulling          #+#    #+#             */
+/*   Updated: 2023/11/20 15:28:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
-void	swap(t_list	**head)
+int	 check_duplicates(t_list_d *head_a)
 {
-	t_list	*second;
+	t_list_d	*cur;
 
-	if (*head && (*head)->next)
+	cur = head_a;
+	while (cur->next)
 	{
-		second = (*head)->next;
-		(*head)->next = second->next;
-		second->next = *head;
-		*head = second;
+		if (cur->content == cur->next->content)
+			return (1);
+		cur = cur->next;
 	}
-}
-
-void	swap_both(t_list **head_a, t_list **head_b)
-{
-	swap(head_a);
-	swap(head_b);
+	return (0);
 }

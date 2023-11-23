@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_duplicates.c                                 :+:      :+:    :+:   */
+/*   lifo_lstadd_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 20:43:54 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/19 20:46:59 by ldulling         ###   ########.fr       */
+/*   Created: 2023/09/24 16:04:18 by ldulling          #+#    #+#             */
+/*   Updated: 2023/11/20 20:39:10 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_duplicates(t_list **head)
+void	lifo_lstadd_front(t_lifo **head, t_lifo *new)
 {
-	t_list	*cur;
-
-	cur = *head;
-	while (cur->next)
+	if (head != NULL && new != NULL)
 	{
-		if (cur->content == cur->next->content)
-			return (1);
-		cur = cur->next;
+		if (*head == NULL)
+			*head = new;
+		else
+		{
+			new->next = *head;
+			*head = new;
+		}
 	}
-	return (0);
+	return ;
 }
