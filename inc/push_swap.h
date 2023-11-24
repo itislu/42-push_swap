@@ -91,10 +91,11 @@ void		reverse_rotate_both(t_heads *heads);
 
 /* Protocol */
 bool		add_amounts_to_protocol_initial_top_a(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_top_a(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_top_b(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_bottom_a(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol_bottom_b(t_lifo **protocol, int block_size_total);
+// bool		add_amounts_to_protocol_top_a(t_lifo **protocol, int block_size_total);
+// bool		add_amounts_to_protocol_top_b(t_lifo **protocol, int block_size_total);
+// bool		add_amounts_to_protocol_bottom_a(t_lifo **protocol, int block_size_total);
+// bool		add_amounts_to_protocol_bottom_b(t_lifo **protocol, int block_size_total);
+bool		add_amounts_to_protocol(t_lifo **protocol, int block_size);
 bool		add_single_amount_to_protocol(t_lifo **protocol, int block_size, char quadrant);
 
 /* Utils */

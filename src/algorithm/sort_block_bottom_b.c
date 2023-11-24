@@ -10,8 +10,7 @@ bool	sort_block_bottom_b(t_heads *heads, t_lifo **protocol)
 	else
 	{
 		separate_block_bottom_b(heads, (*protocol)->block_size);
-		lifo_lstclear_n(protocol, 1);
-		if (!add_amounts_to_protocol_bottom_b(protocol, (*protocol)->block_size))
+		if (!add_amounts_to_protocol(protocol, (*protocol)->block_size))
 			return (ft_lstclear_d(&heads->top_a), ft_lstclear_d(&heads->top_b), lifo_lstclear(protocol), false);
 	}
 	return (true);
