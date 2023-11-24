@@ -16,14 +16,15 @@ void	rotate_a(t_heads *heads)
 {
 	t_list_d	*new_top_a;
 
-	if (heads->top_a && heads->top_a->next)
+	if (heads->top_a)
 	{
 		new_top_a = heads->top_a->next;
 		if (heads->bottom_a)
 			heads->bottom_a->next = heads->top_a;
 		heads->top_a->prev = heads->bottom_a;
 		heads->top_a->next = NULL;
-		new_top_a->prev = NULL;
+		if (new_top_a)
+			new_top_a->prev = NULL;
 		heads->bottom_a = heads->top_a;
 		heads->top_a = new_top_a;
 		heads->bottom_a->pos_sorted = 0;
@@ -35,14 +36,15 @@ void	rotate_b(t_heads *heads)
 {
 	t_list_d	*new_top_b;
 
-	if (heads->top_b && heads->top_b->next)
+	if (heads->top_b)
 	{
 		new_top_b = heads->top_b->next;
 		if (heads->bottom_b)
 			heads->bottom_b->next = heads->top_b;
 		heads->top_b->prev = heads->bottom_b;
 		heads->top_b->next = NULL;
-		new_top_b->prev = NULL;
+		if (new_top_b)
+			new_top_b->prev = NULL;
 		heads->bottom_b = heads->top_b;
 		heads->top_b = new_top_b;
 		heads->bottom_b->pos_sorted = 0;
