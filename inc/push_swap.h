@@ -101,6 +101,9 @@ bool		add_single_amount_to_protocol(t_lifo **protocol, int block_size, char quad
 /* Utils */
 void		find_pos_sorted(t_list_d *start, int block_size, t_next get_next);
 bool		is_n_amount_sorted(t_list_d *cur, int n, t_cmp cmp, t_next get_next);
+void		reset_pos_sorted(t_list_d *cur, int block_size, t_next get_next);
+
+/* Function pointers */
 bool		asc(void *value1, void *value2);
 bool		desc(void *value1, void *value2);
 t_list_d	*get_next(t_list_d *node);

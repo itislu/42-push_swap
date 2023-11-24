@@ -80,6 +80,7 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			function_pointers.c \
 			is_n_amount_sorted.c \
 			protocol.c \
+			reset_pos_sorted.c \
 )
 
 # *************************** VARIABLE CREATION ****************************** #

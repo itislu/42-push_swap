@@ -11,6 +11,7 @@ void	sort_rest_top_a(t_heads *heads, t_lifo **protocol)
 		else
 			sort_three_top_a(heads);
 	}
+	reset_pos_sorted(heads->top_a, (*protocol)->block_size, get_next);
 	lifo_lstclear_n(protocol, 1);
 }
 
