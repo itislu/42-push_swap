@@ -40,9 +40,9 @@ void	sort_three_bottom_a(t_heads *heads)
 		if (!is_n_amount_sorted(heads->top_a, 2, asc, get_next))
 			swap_a(heads);
 		reverse_rotate_a(heads);
-		if (!is_n_amount_sorted(heads->top_b, 2, asc, get_next))
+		if (!is_n_amount_sorted(heads->top_a, 2, asc, get_next))
 			swap_a(heads);
-		if (!is_n_amount_sorted(heads->top_b, 3, asc, get_next))
+		if (!is_n_amount_sorted(heads->top_a, 3, asc, get_next))
 		{
 			rotate_a(heads);
 			swap_a(heads);

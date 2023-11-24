@@ -31,11 +31,11 @@ void	separate_block_bottom_b(t_heads *heads, int block_size)
 		}
 		else if (heads->bottom_b->pos_sorted <= block_size / 3 * 2)
 		{
-			rotate_b(heads);
+			reverse_rotate_b(heads);
 		}
 		else
 		{
-			rotate_b(heads);
+			reverse_rotate_b(heads);
 			push_a(heads);
 		}
 		i++;

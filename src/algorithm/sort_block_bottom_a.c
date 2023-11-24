@@ -25,16 +25,18 @@ void	separate_block_bottom_a(t_heads *heads, int block_size)
 	{
 		if (heads->bottom_a->pos_sorted <= block_size / 3)
 		{
+			reverse_rotate_a(heads);
+			push_b(heads);
 			rotate_b(heads);
 		}
 		else if (heads->bottom_a->pos_sorted <= block_size / 3 * 2)
 		{
-			push_a(heads);
-			rotate_a(heads);
+			reverse_rotate_a(heads);
+			push_b(heads);
 		}
 		else
 		{
-			push_a(heads);
+			reverse_rotate_a(heads);
 		}
 		i++;
 	}
