@@ -16,9 +16,13 @@ bool	separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **proto
 
 bool	sort_block_initial_top_a(t_heads *heads, t_lifo **protocol)
 {
+	int	block_size;
 	//heads->bottom_a->next = heads->top_a;
+
+	block_size = (*protocol)->block_size;
+	lifo_lstclear_n(protocol, 1);
 	// Split first third of a
-	if (!separate_block_initial_top_a(heads, (*protocol)->block_size, protocol))
+	if (!separate_block_initial_top_a(heads, block_size, protocol))
 		return (ft_lstclear_d(&heads->top_a), ft_lstclear_d(&heads->top_b), lifo_lstclear(protocol), false);
 	//heads->bottom_a->next = NULL;
 	// Now collect the groups of 2 or 3
@@ -48,7 +52,7 @@ bool	separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **proto
 	/* Base case */
 	if(block_size <= 3)	// Would be great to stop earlier, with 4 or 5
 	{
-		lifo_lstclear_n(protocol, 1);
+		//lifo_lstclear_n(protocol, 1);
 		if (!add_single_amount_to_protocol(protocol, block_size, TOP_A))
 			return (false);
 		return (true);
