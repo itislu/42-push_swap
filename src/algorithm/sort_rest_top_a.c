@@ -17,6 +17,13 @@ void	sort_rest_top_a(t_heads *heads, t_lifo **protocol)
 
 void	sort_three_top_a(t_heads *heads)
 {
+	if (heads->top_a->next == heads->bottom_a->prev)
+	{
+		if (is_n_amount_sorted(heads->top_a, 2, asc, get_next))
+			reverse_rotate_a(heads);
+		else
+			rotate_a(heads);
+	}
 	if (!is_n_amount_sorted(heads->top_a, 2, asc, get_next))
 		swap_a(heads);
 	if (!is_n_amount_sorted(heads->top_a->next, 2, asc, get_next))
