@@ -12,10 +12,16 @@ bool	desc(void *value1, void *value2)
 
 t_list_d	*get_next(t_list_d *node)
 {
-	return (node->next);
+	if (node)
+		return (node->next);
+	else
+		return (node);
 }
 
 t_list_d	*get_prev(t_list_d *node)
 {
-	return (node->prev);
+	if (node)
+		return (node->prev);
+	else
+		return (node);
 }
