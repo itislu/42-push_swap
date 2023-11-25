@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:47:17 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 01:40:37 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 00:24:19 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	swap_a(t_heads *heads)
 		heads->top_a->prev = NULL;
 		ft_printf("sa\n");
 	}
-	heads->top_a->pos_sorted = 0;
 }
 
 void	swap_b(t_heads *heads)
@@ -47,7 +46,6 @@ void	swap_b(t_heads *heads)
 		heads->top_b->prev = NULL;
 		ft_printf("sb\n");
 	}
-	heads->top_b->pos_sorted = 0;
 }
 
 void	swap_both(t_heads *heads)

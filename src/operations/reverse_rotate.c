@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:26 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 01:40:46 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 00:24:09 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	reverse_rotate_a(t_heads *heads)
 		heads->bottom_a->next = NULL;
 		ft_printf("rra\n");
 	}
-	heads->top_a->pos_sorted = 0;
 }
 
 void	reverse_rotate_b(t_heads *heads)
@@ -45,7 +44,6 @@ void	reverse_rotate_b(t_heads *heads)
 		heads->bottom_b->next = NULL;
 		ft_printf("rrb\n");
 	}
-	heads->top_b->pos_sorted = 0;
 }
 
 void	reverse_rotate_both(t_heads *heads)

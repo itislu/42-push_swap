@@ -11,7 +11,6 @@ void	sort_rest_top_a(t_heads *heads, t_lifo **tasks)
 		else
 			sort_three_top_a(heads);
 	}
-	reset_pos_sorted(heads->top_a, (*tasks)->block_size, get_next);
 	lifo_lstclear_n(tasks, 1);
 }
 

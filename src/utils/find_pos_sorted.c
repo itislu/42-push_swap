@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 10:06:26 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 11:03:18 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 00:13:48 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	find_pos_sorted(t_list_d *start, int block_size, t_trv get_next)
 	t_list_d	*cur;
 	t_list_d	*lowest;
 
+	reset_pos_sorted(start, block_size, get_next);
 	i = 0;
 	while (i++ < block_size)
 	{

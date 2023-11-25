@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:39:45 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 00:21:15 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 00:23:54 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	parsing(int argc, char *argv[], t_list_d **top_a, int count)
 			if (new_node)
 			{
 				new_node->pos_origin = ++count;
-				new_node->pos_sorted = 0;
 				ft_lstadd_back_d(top_a, new_node);
 			}
 			else
