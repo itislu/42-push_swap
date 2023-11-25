@@ -39,7 +39,7 @@ int	main(int argc, char *argv[])
 		return (ft_lstclear_d(&heads.top_a), ft_printf(ERROR_MSG), 4);
 
 	/* Algorithm */
-	if (!sort_block_initial_top_a(&heads, &tasks))
+	if (!separate_stack_a(&heads, &tasks))
 		return (5);
 	/* Now follow the tasks */
 	while (tasks)
