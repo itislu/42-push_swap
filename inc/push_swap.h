@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 16:40:30 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:37:31 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 # include <stdbool.h>
 
-# define TOP_A 1
-# define TOP_B 2
+# define TOP_A 0
+# define TOP_B 1
+# define BOTTOM_A 2
 # define BOTTOM_B 3
-# define BOTTOM_A 4
 
 typedef struct s_list_d
 {
@@ -56,10 +56,9 @@ typedef bool	(*t_cmp)(long, long);
 /* Algorithm */
 bool		sort_block_bottom_a(t_heads *heads, t_lifo **tasks);
 bool		sort_block_bottom_b(t_heads *heads, t_lifo **tasks);
-bool		sort_block_initial_top_a(t_heads *heads, t_lifo **tasks);
+bool		separate_stack_a(t_heads *heads, t_lifo **tasks);
 bool		sort_block_top_a(t_heads *heads, t_lifo **tasks);
 bool		sort_block_top_b(t_heads *heads, t_lifo **tasks);
-bool		separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **tasks);
 void		sort_rest_bottom_a(t_heads *heads, t_lifo **tasks);
 void		sort_rest_bottom_b(t_heads *heads, t_lifo **tasks);
 void		sort_rest_top_a(t_heads *heads, t_lifo **tasks);
@@ -76,6 +75,20 @@ void		lifo_lstclear(t_lifo **head);
 void		lifo_lstclear_n(t_lifo **head, int n);
 t_lifo		*lifo_lstnew(int amount, char quadrant);
 
+/* Movement */
+void		bottom_a_to_bottom_b(t_heads *heads, int amounts[]);
+void		bottom_a_to_top_a(t_heads *heads, int amounts[]);
+void		bottom_a_to_top_b(t_heads *heads, int amounts[]);
+void		bottom_b_to_bottom_a(t_heads *heads, int amounts[]);
+void		bottom_b_to_top_a(t_heads *heads, int amounts[]);
+void		bottom_b_to_top_b(t_heads *heads, int amounts[]);
+void		top_a_to_bottom_a(t_heads *heads, int amounts[]);
+void		top_a_to_bottom_b(t_heads *heads, int amounts[]);
+void		top_a_to_top_b(t_heads *heads, int amounts[]);
+void		top_b_to_bottom_a(t_heads *heads, int amounts[]);
+void		top_b_to_bottom_b(t_heads *heads, int amounts[]);
+void		top_b_to_top_a(t_heads *heads, int amounts[]);
+
 /* Operations */
 void		swap_a(t_heads *heads);
 void		swap_b(t_heads *heads);
@@ -90,9 +103,8 @@ void		reverse_rotate_b(t_heads *heads);
 void		reverse_rotate_both(t_heads *heads);
 
 /* Add to tasks */
-bool		add_amounts_to_tasks_initial_top_a(t_lifo **tasks, int block_size_total);
-bool		add_amounts_to_tasks(t_lifo **tasks, int block_size);
-bool		add_single_amount_to_tasks(t_lifo **tasks, int block_size, char quadrant);
+bool		add_amounts_to_tasks(t_lifo **tasks, int amounts[]);
+bool		add_new_task(t_lifo **tasks, int amount, char quadrant);
 
 /* Utils */
 void		find_pos_sorted(t_list_d *start, int block_size, t_trv get_next);

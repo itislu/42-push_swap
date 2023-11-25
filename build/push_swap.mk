@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/25 16:39:26 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/25 22:54:12 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,9 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 #  Algorithm:
 SUBDIR	:=	algorithm/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
+			separate_stack_a.c \
 			sort_block_bottom_a.c \
 			sort_block_bottom_b.c \
-			sort_block_initial_top_a.c \
 			sort_block_top_a.c \
 			sort_block_top_b.c \
 			sort_rest_bottom_a.c \
@@ -62,6 +62,15 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			lifo_lstclear.c \
 			lifo_lstclear_n.c \
 			lifo_lstnew.c \
+)
+
+#  Movement:
+SUBDIR	:=	movement/
+TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
+			bottom_a_to_x.c \
+			bottom_b_to_x.c \
+			top_a_to_x.c \
+			top_b_to_x.c \
 )
 
 #  Operations:
