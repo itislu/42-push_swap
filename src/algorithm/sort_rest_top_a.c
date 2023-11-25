@@ -19,9 +19,9 @@ void	sort_three_top_a(t_heads *heads)
 {
 	if (heads->top_a->next == heads->bottom_a->prev)
 	{
-		if (is_n_amount_sorted(heads->top_a, 2, asc, get_next))
+		if (heads->top_a->pos_sorted == 1)
 			reverse_rotate_a(heads);
-		else
+		else if (heads->top_a->pos_sorted == 3)
 			rotate_a(heads);
 	}
 	if (!is_n_amount_sorted(heads->top_a, 2, asc, get_next))
