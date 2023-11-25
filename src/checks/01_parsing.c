@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:39:45 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 00:16:15 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 00:21:15 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ bool	check_validity(int argc, char *argv[])
 				i++;
 			if (argv[argc][i] == '-' || argv[argc][i] == '+')
 				i++;
+			if (!ft_isdigit(argv[argc][i]))
+				return (false);
 			while (ft_isdigit(argv[argc][i]))
 				i++;
 			if (!ft_isspace(argv[argc][i]) && argv[argc][i] != '\0')
