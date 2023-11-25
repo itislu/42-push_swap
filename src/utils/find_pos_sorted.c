@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assign_pos_sorted_in_block.c                            :+:      :+:    :+:   */
+/*   find_pos_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 21:07:32 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/20 15:27:04 by ldulling         ###   ########.fr       */
+/*   Created: 2023/11/25 10:06:26 by ldulling          #+#    #+#             */
+/*   Updated: 2023/11/25 11:03:18 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	find_pos_sorted(t_list_d *start, int block_size, t_trv get_next)
 	{
 		j = 0;
 		cur = start;
-		while (cur->pos_sorted != 0)
+		while (cur->pos_sorted)
 		{
 			cur = get_next(cur);
 			j++;
@@ -33,7 +33,7 @@ void	find_pos_sorted(t_list_d *start, int block_size, t_trv get_next)
 		cur = get_next(cur);
 		while (++j < block_size)
 		{
-			if (cur->pos_sorted == 0 && cur->content < lowest->content)
+			if (!cur->pos_sorted && (long)cur->content < (long)lowest->content)
 				lowest = cur;
 			cur = get_next(cur);
 		}

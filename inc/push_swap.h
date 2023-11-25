@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 09:35:06 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 10:51:12 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_lifo
 
 typedef t_list_d	*(*t_trv)(t_list_d *);
 
-typedef bool	(*t_cmp)(void *, void *);
+typedef bool	(*t_cmp)(long, long);
 
 # include "libft.h"
 # include "ft_printf.h"
@@ -100,8 +100,8 @@ bool		is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next);
 void		reset_pos_sorted(t_list_d *cur, int block_size, t_trv get_next);
 
 /* Function pointers */
-bool		asc(void *value1, void *value2);
-bool		desc(void *value1, void *value2);
+bool		asc(long value1, long value2);
+bool		desc(long value1, long value2);
 t_list_d	*get_next(t_list_d *node);
 t_list_d	*get_prev(t_list_d *node);
 

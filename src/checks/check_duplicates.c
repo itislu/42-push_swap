@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 20:43:54 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/20 15:28:44 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 10:05:00 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	 check_duplicates(t_list_d *head_a)
 	cur = head_a;
 	while (cur->next)
 	{
-		if (cur->content == cur->next->content)
+		if ((long) cur->content == (long) cur->next->content)
 			return (1);
 		cur = cur->next;
 	}

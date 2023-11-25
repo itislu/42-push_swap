@@ -9,7 +9,7 @@ bool	is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next)
 	while (n > 1)
 	{
 		next = get_next(cur);
-		if (next && !ord(cur->content, next->content))
+		if (next && !ord((long) cur->content, (long) next->content))
 			break ;
 		cur = next;
 		n--;

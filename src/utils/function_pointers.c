@@ -1,11 +1,11 @@
 #include "push_swap.h"
 
-bool	asc(void *value1, void *value2)
+bool	asc(long value1, long value2)
 {
 	return (value1 <= value2);
 }
 
-bool	desc(void *value1, void *value2)
+bool	desc(long value1, long value2)
 {
 	return (value1 >= value2);
 }
