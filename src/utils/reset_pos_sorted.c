@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	reset_pos_sorted(t_list_d *cur, int block_size, t_next get_next)
+void	reset_pos_sorted(t_list_d *cur, int block_size, t_trv get_next)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 00:16:59 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 09:35:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_lifo
 	struct s_lifo	*next;
 }	t_lifo;
 
-typedef t_list_d	*(*t_next)(t_list_d *);
+typedef t_list_d	*(*t_trv)(t_list_d *);
 
 typedef bool	(*t_cmp)(void *, void *);
 
@@ -91,17 +91,13 @@ void		reverse_rotate_both(t_heads *heads);
 
 /* Protocol */
 bool		add_amounts_to_protocol_initial_top_a(t_lifo **protocol, int block_size_total);
-// bool		add_amounts_to_protocol_top_a(t_lifo **protocol, int block_size_total);
-// bool		add_amounts_to_protocol_top_b(t_lifo **protocol, int block_size_total);
-// bool		add_amounts_to_protocol_bottom_a(t_lifo **protocol, int block_size_total);
-// bool		add_amounts_to_protocol_bottom_b(t_lifo **protocol, int block_size_total);
 bool		add_amounts_to_protocol(t_lifo **protocol, int block_size);
 bool		add_single_amount_to_protocol(t_lifo **protocol, int block_size, char quadrant);
 
 /* Utils */
-void		find_pos_sorted(t_list_d *start, int block_size, t_next get_next);
-bool		is_n_amount_sorted(t_list_d *cur, int n, t_cmp cmp, t_next get_next);
-void		reset_pos_sorted(t_list_d *cur, int block_size, t_next get_next);
+void		find_pos_sorted(t_list_d *start, int block_size, t_trv get_next);
+bool		is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next);
+void		reset_pos_sorted(t_list_d *cur, int block_size, t_trv get_next);
 
 /* Function pointers */
 bool		asc(void *value1, void *value2);

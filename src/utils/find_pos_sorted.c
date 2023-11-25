@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	find_pos_sorted(t_list_d *start, int block_size, t_next get_next)
+void	find_pos_sorted(t_list_d *start, int block_size, t_trv get_next)
 {
 	int			i;
 	int			j;

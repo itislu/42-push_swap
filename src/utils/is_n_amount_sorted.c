@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-bool	is_n_amount_sorted(t_list_d *cur, int n, t_cmp cmp, t_next get_next)
+bool	is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next)
 {
 	t_list_d	*next;
 
@@ -9,7 +9,7 @@ bool	is_n_amount_sorted(t_list_d *cur, int n, t_cmp cmp, t_next get_next)
 	while (n > 1 && cur/* && cur->next*/)	// not sure if everything is ok here
 	{
 		next = get_next(cur);
-		if (cmp(cur->content, next->content))
+		if (!ord(cur->content, next->content))
 			break ;
 		cur = next;
 		n--;
