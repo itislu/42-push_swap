@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/20 23:47:03 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 00:16:59 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		sort_rest_top_a(t_heads *heads, t_lifo **protocol);
 void		sort_rest_top_b(t_heads *heads, t_lifo **protocol);
 
 /* Checks */
-t_list_d	*parsing(int argc, char *argv[]);
+int			parsing(int argc, char *argv[], t_list_d **top_a, int count);
 int			bigger_than_integer(t_list_d *head);
 int			check_duplicates(t_list_d *head_a);
 
