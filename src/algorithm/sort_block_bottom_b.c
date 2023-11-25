@@ -2,16 +2,16 @@
 
 void	separate_block_bottom_b(t_heads *heads, int block_size);
 
-bool	sort_block_bottom_b(t_heads *heads, t_lifo **protocol)
+bool	sort_block_bottom_b(t_heads *heads, t_lifo **tasks)
 {
-	find_pos_sorted(heads->bottom_b, (*protocol)->block_size, get_prev);
-	if ((*protocol)->block_size <= 3)
-		sort_rest_bottom_b(heads, protocol);
+	find_pos_sorted(heads->bottom_b, (*tasks)->block_size, get_prev);
+	if ((*tasks)->block_size <= 3)
+		sort_rest_bottom_b(heads, tasks);
 	else
 	{
-		separate_block_bottom_b(heads, (*protocol)->block_size);
-		if (!add_amounts_to_protocol(protocol, (*protocol)->block_size))
-			return (ft_lstclear_d(&heads->top_a), ft_lstclear_d(&heads->top_b), lifo_lstclear(protocol), false);
+		separate_block_bottom_b(heads, (*tasks)->block_size);
+		if (!add_amounts_to_tasks(tasks, (*tasks)->block_size))
+			return (ft_lstclear_d(&heads->top_a), ft_lstclear_d(&heads->top_b), lifo_lstclear(tasks), false);
 	}
 	return (true);
 }

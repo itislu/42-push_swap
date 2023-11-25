@@ -2,14 +2,14 @@
 
 void	sort_three_top_b(t_heads *heads);
 
-void	sort_rest_top_b(t_heads *heads, t_lifo **protocol)
+void	sort_rest_top_b(t_heads *heads, t_lifo **tasks)
 {
-	if (is_n_amount_sorted(heads->top_b, (*protocol)->block_size, desc, get_next))
-		while ((*protocol)->block_size-- > 0)
+	if (is_n_amount_sorted(heads->top_b, (*tasks)->block_size, desc, get_next))
+		while ((*tasks)->block_size-- > 0)
 			push_a(heads);
 	else
 	{
-		if ((*protocol)->block_size == 2)
+		if ((*tasks)->block_size == 2)
 		{
 			swap_b(heads);
 			push_a(heads);
@@ -18,7 +18,7 @@ void	sort_rest_top_b(t_heads *heads, t_lifo **protocol)
 		else
 			sort_three_top_b(heads);
 	}
-	lifo_lstclear_n(protocol, 1);
+	lifo_lstclear_n(tasks, 1);
 }
 
 void	sort_three_top_b(t_heads *heads)

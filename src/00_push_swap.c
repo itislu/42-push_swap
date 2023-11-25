@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:06 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 00:16:32 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:38:38 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char *argv[])
 {
 	t_heads	heads;
 	int		input_count;
-	t_lifo	*protocol;
+	t_lifo	*tasks;
 
 	if (argc < 2)
 		return (1);
@@ -34,27 +34,24 @@ int	main(int argc, char *argv[])
 	if (bigger_than_integer(heads.top_a))
 		return (ft_lstclear_d(&heads.top_a), ft_printf(ERROR_MSG), 3);
 
-	/* Find the sorted order */
-	//find_pos_sorted(heads.top_a, argc - 1, get_next);
-
-	protocol = lifo_lstnew(input_count, TOP_A);
-	if (!protocol)
+	tasks = lifo_lstnew(input_count, TOP_A);
+	if (!tasks)
 		return (ft_lstclear_d(&heads.top_a), ft_printf(ERROR_MSG), 4);
 
 	/* Algorithm */
-	if (!sort_block_initial_top_a(&heads, &protocol))
+	if (!sort_block_initial_top_a(&heads, &tasks))
 		return (5);
-	/* Now follow the protocol */
-	while (protocol)
+	/* Now follow the tasks */
+	while (tasks)
 	{
-		if (protocol->quadrant == TOP_A)
-			sort_block_top_a(&heads, &protocol);
-		else if (protocol->quadrant == TOP_B)
-			sort_block_top_b(&heads, &protocol);
-		else if (protocol->quadrant == BOTTOM_B)
-			sort_block_bottom_b(&heads, &protocol);
-		else if (protocol->quadrant == BOTTOM_A)
-			sort_block_bottom_a(&heads, &protocol);
+		if (tasks->quadrant == TOP_A)
+			sort_block_top_a(&heads, &tasks);
+		else if (tasks->quadrant == TOP_B)
+			sort_block_top_b(&heads, &tasks);
+		else if (tasks->quadrant == BOTTOM_B)
+			sort_block_bottom_b(&heads, &tasks);
+		else if (tasks->quadrant == BOTTOM_A)
+			sort_block_bottom_a(&heads, &tasks);
 	}
 
 	/* Check for duplicates in sorted list */

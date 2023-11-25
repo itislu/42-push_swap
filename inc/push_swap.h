@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 10:51:12 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:40:30 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,16 @@ typedef bool	(*t_cmp)(long, long);
 # include "ft_printf.h"
 
 /* Algorithm */
-bool		sort_block_bottom_a(t_heads *heads, t_lifo **protocol);
-bool		sort_block_bottom_b(t_heads *heads, t_lifo **protocol);
-bool		sort_block_initial_top_a(t_heads *heads, t_lifo **protocol);
-bool		sort_block_top_a(t_heads *heads, t_lifo **protocol);
-bool		sort_block_top_b(t_heads *heads, t_lifo **protocol);
-bool		separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **protocol);
-void		sort_rest_bottom_a(t_heads *heads, t_lifo **protocol);
-void		sort_rest_bottom_b(t_heads *heads, t_lifo **protocol);
-void		sort_rest_top_a(t_heads *heads, t_lifo **protocol);
-void		sort_rest_top_b(t_heads *heads, t_lifo **protocol);
+bool		sort_block_bottom_a(t_heads *heads, t_lifo **tasks);
+bool		sort_block_bottom_b(t_heads *heads, t_lifo **tasks);
+bool		sort_block_initial_top_a(t_heads *heads, t_lifo **tasks);
+bool		sort_block_top_a(t_heads *heads, t_lifo **tasks);
+bool		sort_block_top_b(t_heads *heads, t_lifo **tasks);
+bool		separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **tasks);
+void		sort_rest_bottom_a(t_heads *heads, t_lifo **tasks);
+void		sort_rest_bottom_b(t_heads *heads, t_lifo **tasks);
+void		sort_rest_top_a(t_heads *heads, t_lifo **tasks);
+void		sort_rest_top_b(t_heads *heads, t_lifo **tasks);
 
 /* Checks */
 int			parsing(int argc, char *argv[], t_list_d **top_a, int count);
@@ -89,10 +89,10 @@ void		reverse_rotate_a(t_heads *heads);
 void		reverse_rotate_b(t_heads *heads);
 void		reverse_rotate_both(t_heads *heads);
 
-/* Protocol */
-bool		add_amounts_to_protocol_initial_top_a(t_lifo **protocol, int block_size_total);
-bool		add_amounts_to_protocol(t_lifo **protocol, int block_size);
-bool		add_single_amount_to_protocol(t_lifo **protocol, int block_size, char quadrant);
+/* Add to tasks */
+bool		add_amounts_to_tasks_initial_top_a(t_lifo **tasks, int block_size_total);
+bool		add_amounts_to_tasks(t_lifo **tasks, int block_size);
+bool		add_single_amount_to_tasks(t_lifo **tasks, int block_size, char quadrant);
 
 /* Utils */
 void		find_pos_sorted(t_list_d *start, int block_size, t_trv get_next);

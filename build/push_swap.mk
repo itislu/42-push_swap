@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    libft.mk                                           :+:      :+:    :+:    #
+#    push_swap.mk                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/18 16:37:13 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/25 16:39:26 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			find_pos_sorted.c \
 			function_pointers.c \
 			is_n_amount_sorted.c \
-			protocol.c \
+			add_to_tasks.c \
 			reset_pos_sorted.c \
 )
 

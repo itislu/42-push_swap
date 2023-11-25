@@ -2,17 +2,17 @@
 
 void	sort_three_top_a(t_heads *heads);
 
-void	sort_rest_top_a(t_heads *heads, t_lifo **protocol)
+void	sort_rest_top_a(t_heads *heads, t_lifo **tasks)
 {
-	if (!is_n_amount_sorted(heads->top_a, (*protocol)->block_size, asc, get_next))
+	if (!is_n_amount_sorted(heads->top_a, (*tasks)->block_size, asc, get_next))
 	{
-		if ((*protocol)->block_size == 2)
+		if ((*tasks)->block_size == 2)
 			swap_a(heads);
 		else
 			sort_three_top_a(heads);
 	}
-	reset_pos_sorted(heads->top_a, (*protocol)->block_size, get_next);
-	lifo_lstclear_n(protocol, 1);
+	reset_pos_sorted(heads->top_a, (*tasks)->block_size, get_next);
+	lifo_lstclear_n(tasks, 1);
 }
 
 void	sort_three_top_a(t_heads *heads)
