@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:49:01 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 14:49:01 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:24:35 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ void	sort_rest_top_b(t_stacks *stacks, t_lifo **tasks)
 
 void	sort_three_top_b(t_stacks *stacks)
 {
+	if (stacks->top_b->next == stacks->bottom_b->prev)
+	{
+		if (stacks->top_b->next->pos_sorted == 3)
+			swap_b(stacks);
+		else if (stacks->bottom_b->pos_sorted == 3)
+			reverse_rotate_b(stacks);
+	}
 	if (!is_n_amount_sorted(stacks->top_b, 2, desc, get_next))
 		swap_b(stacks);
 	push_a(stacks);

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:49:03 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 14:49:04 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 18:31:58 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	sort_three_top_a(t_stacks *stacks)
 {
 	if (stacks->top_a->next == stacks->bottom_a->prev)
 	{
-		if (is_n_amount_sorted(stacks->top_a, 2, asc, get_next))
-			reverse_rotate_a(stacks);
-		else if ((long) stacks->top_a->content > (long) stacks->bottom_a->content)
+		if (stacks->top_a->pos_sorted == 3)
 			rotate_a(stacks);
+		else if (stacks->top_a->next->pos_sorted == 3)
+			reverse_rotate_a(stacks);
 	}
 	if (!is_n_amount_sorted(stacks->top_a, 2, asc, get_next))
 		swap_a(stacks);
