@@ -6,49 +6,49 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:26 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 00:24:09 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 14:39:01 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	reverse_rotate_a(t_heads *heads)
+void	reverse_rotate_a(t_stacks *stacks)
 {
 	t_list_d	*new_bottom_a;
 
-	if (heads->bottom_a->prev)
+	if (stacks->bottom_a->prev)
 	{
-		new_bottom_a = heads->bottom_a->prev;
-		heads->top_a->prev = heads->bottom_a;
-		heads->bottom_a->next = heads->top_a;
-		heads->top_a = heads->bottom_a;
-		heads->top_a->prev = NULL;
-		heads->bottom_a = new_bottom_a;
-		heads->bottom_a->next = NULL;
+		new_bottom_a = stacks->bottom_a->prev;
+		stacks->top_a->prev = stacks->bottom_a;
+		stacks->bottom_a->next = stacks->top_a;
+		stacks->top_a = stacks->bottom_a;
+		stacks->top_a->prev = NULL;
+		stacks->bottom_a = new_bottom_a;
+		stacks->bottom_a->next = NULL;
 		ft_printf("rra\n");
 	}
 }
 
-void	reverse_rotate_b(t_heads *heads)
+void	reverse_rotate_b(t_stacks *stacks)
 {
 	t_list_d	*new_bottom_b;
 
-	if (heads->bottom_b->prev)
+	if (stacks->bottom_b->prev)
 	{
-		new_bottom_b = heads->bottom_b->prev;
-		heads->top_b->prev = heads->bottom_b;
-		heads->bottom_b->next = heads->top_b;
-		heads->top_b = heads->bottom_b;
-		heads->top_b->prev = NULL;
-		heads->bottom_b = new_bottom_b;
-		heads->bottom_b->next = NULL;
+		new_bottom_b = stacks->bottom_b->prev;
+		stacks->top_b->prev = stacks->bottom_b;
+		stacks->bottom_b->next = stacks->top_b;
+		stacks->top_b = stacks->bottom_b;
+		stacks->top_b->prev = NULL;
+		stacks->bottom_b = new_bottom_b;
+		stacks->bottom_b->next = NULL;
 		ft_printf("rrb\n");
 	}
 }
 
-void	reverse_rotate_both(t_heads *heads)
+void	reverse_rotate_both(t_stacks *stacks)
 {
-	reverse_rotate_a(heads);
-	reverse_rotate_b(heads);
+	reverse_rotate_a(stacks);
+	reverse_rotate_b(stacks);
 	ft_printf("rrr\n");
 }

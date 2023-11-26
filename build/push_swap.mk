@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/26 13:49:05 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/26 14:25:06 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ DIR		:=	./
 #  Main:
 SUBDIR	:=	./
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
-			00_push_swap.c \
+			push_swap.c \
 )
 
 #  Algorithm:
