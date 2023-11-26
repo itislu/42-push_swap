@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 21:37:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:59:56 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,8 @@ void		reset_pos_sorted(t_list_d *cur, int block_size, t_trv get_next);
 /* Function pointers */
 bool		asc(long value1, long value2);
 bool		desc(long value1, long value2);
+bool		asc_contig(long value1, long value2);
+bool		desc_contig(long value1, long value2);
 t_list_d	*get_next(t_list_d *node);
 t_list_d	*get_prev(t_list_d *node);
 
