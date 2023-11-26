@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_block_initial_top_a.c                         :+:      :+:    :+:   */
+/*   separate_stack_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:59:15 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 22:09:50 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 00:16:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool	separate_block_initial_top_a(t_heads *heads, int block_size, t_lifo **tasks
 	}
 	find_pos_sorted(heads->top_a, block_size, get_next);
 	i = 0;
-	while (i++ < block_size)
+	while (i++ < block_size && !is_n_amount_sorted(heads->top_a, block_size, asc_contig, get_next))
 	{
 		if (heads->top_a->pos_sorted <= block_size / 3)
 			top_a_to_bottom_b(heads, amounts);
