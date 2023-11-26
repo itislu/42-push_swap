@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/26 13:26:21 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/26 13:49:05 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ SUBDIR	:=	checks/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			01_parsing.c \
 			02_bigger_than_integer.c \
-			check_duplicates.c \
+			03_check_duplicates.c \
 )
 
 #  LIFO:
