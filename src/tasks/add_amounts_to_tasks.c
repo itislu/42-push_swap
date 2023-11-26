@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_to_tasks.c                                     :+:      :+:    :+:   */
+/*   add_amounts_to_tasks.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 18:19:08 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 22:41:29 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:17:00 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,4 @@ bool	add_high_third(t_lifo **tasks, int amounts[], char origin)
 	else
 		quadrant = TOP_B;
 	return (add_new_task(tasks, amounts[quadrant], quadrant));
-}
-
-bool	add_new_task(t_lifo **tasks, int amount, char quadrant)
-{
-	t_lifo	*new_entry;
-
-	new_entry = lifo_lstnew(amount, quadrant);
-	if (!new_entry)
-		return (false);
-	lifo_lstadd_front(tasks, new_entry);
-	return (true);
 }

@@ -6,13 +6,13 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 14:49:11 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 14:49:11 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 15:50:04 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	separate_block_top_b(t_stacks *stacks, int block_size, int amounts[]);
+void	seprt_block_top_b(t_stacks *stacks, int block_size, int amounts[]);
 
 bool	sort_block_top_b(t_stacks *stacks, t_lifo **tasks)
 {
@@ -24,14 +24,14 @@ bool	sort_block_top_b(t_stacks *stacks, t_lifo **tasks)
 		sort_rest_top_b(stacks, tasks);
 	else
 	{
-		separate_block_top_b(stacks, (*tasks)->block_size, amounts);
+		seprt_block_top_b(stacks, (*tasks)->block_size, amounts);
 		if (!add_amounts_to_tasks(tasks, amounts))
-			return (ft_lstclear_d(&stacks->top_a), ft_lstclear_d(&stacks->top_b), lifo_lstclear(tasks), false);
+			return (lifo_lstclear(tasks), false);
 	}
 	return (true);
 }
 
-void	separate_block_top_b(t_stacks *stacks, int block_size, int amounts[])
+void	seprt_block_top_b(t_stacks *stacks, int block_size, int amounts[])
 {
 	int	i;
 

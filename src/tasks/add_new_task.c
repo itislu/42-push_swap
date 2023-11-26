@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_check_duplicates.c                              :+:      :+:    :+:   */
+/*   add_new_task.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 20:43:54 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 18:44:08 by ldulling         ###   ########.fr       */
+/*   Created: 2023/11/26 15:16:47 by ldulling          #+#    #+#             */
+/*   Updated: 2023/11/26 15:17:03 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_duplicates(t_list_d *to_check)
+bool	add_new_task(t_lifo **tasks, int amount, char quadrant)
 {
-	t_list_d	*cur;
+	t_lifo	*new_entry;
 
-	while (to_check)
-	{
-		cur = to_check->next;
-		while (cur)
-		{
-			if ((long) to_check->content == (long) cur->content)
-				return (1);
-			cur = cur->next;
-		}
-		to_check = to_check->next;
-	}
-	return (0);
+	new_entry = lifo_lstnew(amount, quadrant);
+	if (!new_entry)
+		return (false);
+	lifo_lstadd_front(tasks, new_entry);
+	return (true);
 }

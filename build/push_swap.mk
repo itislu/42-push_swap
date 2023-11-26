@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/26 14:25:06 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/26 15:29:36 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,15 +82,22 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			swap.c \
 )
 
+#  Tasks:
+SUBDIR	:=	tasks/
+TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
+			add_2_new_tasks.c \
+			add_amounts_to_tasks.c \
+			add_new_task.c \
+)
+
 #  Utils:
 SUBDIR	:=	utils/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			find_pos_sorted.c \
 			function_pointers_compare.c \
 			function_pointers_traverse.c \
-			is_n_amount_sorted.c \
 			is_empty.c \
-			add_to_tasks.c \
+			is_n_amount_sorted.c \
 			reset_pos_sorted.c \
 )
 

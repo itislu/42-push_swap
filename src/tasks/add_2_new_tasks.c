@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_check_duplicates.c                              :+:      :+:    :+:   */
+/*   add_2_new_tasks.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 20:43:54 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 18:44:08 by ldulling         ###   ########.fr       */
+/*   Created: 2023/11/26 15:16:47 by ldulling          #+#    #+#             */
+/*   Updated: 2023/11/26 15:29:07 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_duplicates(t_list_d *to_check)
+bool	add_2_new_tasks(t_lifo **tasks, int amounts[], int qu1, int qu2)
 {
-	t_list_d	*cur;
-
-	while (to_check)
-	{
-		cur = to_check->next;
-		while (cur)
-		{
-			if ((long) to_check->content == (long) cur->content)
-				return (1);
-			cur = cur->next;
-		}
-		to_check = to_check->next;
-	}
-	return (0);
+	if (!add_new_task(tasks, amounts[qu1], qu1))
+		return (false);
+	if (!add_new_task(tasks, amounts[qu2], qu2))
+		return (false);
+	return (true);
 }
