@@ -66,11 +66,12 @@ void		sort_rest_top_a(t_stacks *stacks, t_lifo **tasks);
 void		sort_rest_top_b(t_stacks *stacks, t_lifo **tasks);
 
 /* Checks */
-int			parsing(int argc, char *argv[], t_list_d **top_a, int count);
-int			bigger_than_integer(t_list_d *cur);
+bool		check_bad_input(int argc, char *argv[]);
+int			check_bigger_than_integer(t_list_d *cur);
 int			check_duplicates(t_list_d *to_check);
+bool		check_malloc_errors(t_stacks *stacks, int input_count);
 
-/* LIFO */
+/* Last In, First Out */
 void		lifo_lstadd_front(t_lifo **head, t_lifo *new);
 void		lifo_lstclear(t_lifo **head);
 void		lifo_lstclear_n(t_lifo **head, int n);
@@ -103,6 +104,10 @@ void		reverse_rotate_a(t_stacks *stacks);
 void		reverse_rotate_b(t_stacks *stacks);
 void		reverse_rotate_both(t_stacks *stacks);
 
+/* Parsing */
+void		init_stacks(t_stacks *stacks, int argc, char *argv[], int *incount);
+bool		parsing(int argc, char *argv[], t_stacks *stacks, int *input_count);
+
 /* Tasks */
 bool		add_2_new_tasks(t_lifo **tasks, int amounts[], int qu1, int qu2);
 bool		add_amounts_to_tasks(t_lifo **tasks, int amounts[]);
@@ -116,6 +121,7 @@ void		reset_pos_sorted(t_list_d *cur, t_trv get_next);
 
 /* Function pointers */
 bool		asc(long value1, long value2);
+void		del(void *nothing);
 bool		desc(long value1, long value2);
 bool		asc_contig(long value1, long value2);
 bool		desc_contig(long value1, long value2);

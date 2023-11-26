@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/26 15:29:36 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/27 00:38:51 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,13 +50,14 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 #  Checks:
 SUBDIR	:=	checks/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
-			01_parsing.c \
-			02_bigger_than_integer.c \
-			03_check_duplicates.c \
+			check_bad_input.c \
+			check_bigger_than_integer.c \
+			check_duplicates.c \
+			check_malloc_errors.c \
 )
 
-#  LIFO:
-SUBDIR	:=	lifo/
+#  Last In, First Out:
+SUBDIR	:=	last_in_first_out/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			lifo_lstadd_front.c \
 			lifo_lstclear.c \
@@ -82,6 +83,13 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			swap.c \
 )
 
+#  Parsing:
+SUBDIR	:=	parsing/
+TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
+			init_stacks.c \
+			parsing.c \
+)
+
 #  Tasks:
 SUBDIR	:=	tasks/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
@@ -95,6 +103,7 @@ SUBDIR	:=	utils/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			find_pos_sorted.c \
 			function_pointers_compare.c \
+			function_pointers_delete.c \
 			function_pointers_traverse.c \
 			is_empty.c \
 			is_n_amount_sorted.c \
