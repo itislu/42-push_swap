@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 23:59:56 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:26:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ bool		add_new_task(t_lifo **tasks, int amount, char quadrant);
 
 /* Utils */
 void		find_pos_sorted(t_list_d *start, int block_size, t_trv get_next);
+bool		is_empty(t_list_d *cur, int block_size, t_trv get_next);
 bool		is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next);
 void		reset_pos_sorted(t_list_d *cur, int block_size, t_trv get_next);
 

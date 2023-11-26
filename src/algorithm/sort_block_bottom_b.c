@@ -6,6 +6,11 @@ bool	sort_block_bottom_b(t_heads *heads, t_lifo **tasks)
 {
 	int	amounts[4];
 
+	if(is_empty(heads->top_b, (*tasks)->block_size, get_next))
+	{
+		(*tasks)->quadrant = TOP_B;
+		return (sort_block_top_b(heads, tasks));
+	}
 	ft_bzero(amounts, 4 * sizeof(int));
 	find_pos_sorted(heads->bottom_b, (*tasks)->block_size, get_prev);
 	if ((*tasks)->block_size <= 3)

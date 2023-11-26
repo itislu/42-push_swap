@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 13:33:38 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/26 13:07:06 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/26 13:26:21 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,7 @@ TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			function_pointers_compare.c \
 			function_pointers_traverse.c \
 			is_n_amount_sorted.c \
+			is_empty.c \
 			add_to_tasks.c \
 			reset_pos_sorted.c \
 )
