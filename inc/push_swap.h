@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 14:53:49 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 17:33:01 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ void		reverse_rotate_b(t_stacks *stacks);
 void		reverse_rotate_both(t_stacks *stacks);
 
 /* Tasks */
+bool		add_2_new_tasks(t_lifo **tasks, int amounts[], int qu1, int qu2);
 bool		add_amounts_to_tasks(t_lifo **tasks, int amounts[]);
 bool		add_new_task(t_lifo **tasks, int amount, char quadrant);
 
@@ -111,7 +112,7 @@ bool		add_new_task(t_lifo **tasks, int amount, char quadrant);
 void		find_pos_sorted(t_list_d *start, int block_size, t_trv get_next);
 bool		is_empty(t_list_d *cur, int block_size, t_trv get_next);
 bool		is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next);
-void		reset_pos_sorted(t_list_d *cur, int block_size, t_trv get_next);
+void		reset_pos_sorted(t_list_d *cur, t_trv get_next);
 
 /* Function pointers */
 bool		asc(long value1, long value2);
