@@ -36,7 +36,8 @@ void	separate_block_top_a(t_stacks *stacks, int block_size, int amounts[])
 	int	i;
 
 	i = 0;
-	while (i < block_size)
+	while (i < block_size
+		&& !is_n_amount_sorted(stacks->top_a, block_size, asc_contig, get_next))
 	{
 		if (stacks->top_a->pos_sorted <= block_size / 3)
 			top_a_to_bottom_b(stacks, amounts);
