@@ -10,6 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
+
 # ***************************** CONFIGURATION ******************************** #
 
 NAME			:=	libft.a
@@ -36,6 +37,7 @@ CC				:=	cc
 CFLAGS			?=	-Wall -Wextra -Werror $(addprefix -I,$I)
 DEBUGFLAGS		:=	-g
 ARFLAGS			:=	rcs
+
 
 # ***************************** BUILD PROCESS ******************************** #
 
@@ -106,8 +108,9 @@ ifeq (,$(filter cleandep cleanobj clean fclean re debug norm,$(MAKECMDGOALS)))
     endif
 endif
 
+
 # *************************** MAKEFILE DEBUGGING ***************************** #
 
 # Prints the values of the variable given after the minus.
-print-%			:
-	@				echo $* = $($*)
+print-%	:
+	@		echo $* = $($*)

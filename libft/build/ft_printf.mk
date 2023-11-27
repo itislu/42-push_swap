@@ -10,6 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
+
 # ****************************** PREPARATION ********************************* #
 
 # Gets this file's name (without suffix) for automatic variable creation later.
@@ -17,6 +18,7 @@ FILENAME	:=	$(basename $(notdir $(lastword $(MAKEFILE_LIST))))
 
 # Resets TMP to get rid of any old values from other .mk files.
 TMP			:=
+
 
 # ***************************** CONFIGURATION ******************************** #
 
@@ -48,8 +50,9 @@ $(eval OBJ_$(FILENAME)		:=	$(SRC_$(FILENAME):%.c=$O%.o))
 # Makes this file's object files dependent on any DEPS specified above.
 $(OBJ_$(FILENAME)):	$O%.o	:	$(foreach dep,$(DEPS),$(OBJ_$(dep)))
 
+
 # *************************** MAKEFILE DEBUGGING ***************************** #
 
 # Prints the values of the variable given after the minus.
-print-%			:
-	@				echo $* = $($*)
+print-%	:
+	@		echo $* = $($*)

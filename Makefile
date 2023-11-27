@@ -6,9 +6,10 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/27 10:57:43 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/27 12:40:05 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 # ***************************** CONFIGURATION ******************************** #
 
@@ -37,6 +38,7 @@ SOURCELISTS		:=	push_swap.mk \
 CC				:=	cc
 CFLAGS			:=	-Wall -Wextra -Werror $(addprefix -I,$I)
 DEBUGFLAGS		:=	-g
+
 
 # ***************************** BUILD PROCESS ******************************** #
 
@@ -93,7 +95,7 @@ ifneq (,$(wildcard $(DEP)))
 				rm -f $(DEP)
 endif
 ifneq (,$(wildcard $D))
-				-find $(D) -type d -empty -delete
+				-find $D -type d -empty -delete
 endif
 
 cleanobj		:
@@ -104,7 +106,7 @@ ifneq (,$(wildcard $(OBJ)))
 				rm -f $(OBJ)
 endif
 ifneq (,$(wildcard $O))
-				-find $(O) -type d -empty -delete
+				-find $O -type d -empty -delete
 endif
 
 clean			:	cleandep cleanobj
@@ -153,8 +155,9 @@ ifeq (,$(filter cleandep cleanobj clean fclean re norm,$(MAKECMDGOALS)))
     endif
 endif
 
+
 # *************************** MAKEFILE DEBUGGING ***************************** #
 
 # Makefile debugging
-print-%			:
-	@				echo $* = $($*)
+print-%	:
+	@		echo $* = $($*)
