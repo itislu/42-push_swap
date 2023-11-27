@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 17:33:01 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/27 01:00:09 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include "ft_printf.h"
 
 # define ERROR_MSG "Error\n"
-
-# include <stdbool.h>
-
 # define TOP_A 0
 # define TOP_B 1
 # define BOTTOM_A 2
