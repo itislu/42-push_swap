@@ -13,6 +13,9 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "libft.h"
+# include "ft_printf.h"
+
 # define ERROR_MSG "Error\n"
 
 # include <stdbool.h>
@@ -41,9 +44,6 @@ typedef struct s_lifo
 /* Function pointers */
 typedef t_list_d	*(*t_trv)(t_list_d *);
 typedef bool		(*t_cmp)(long, long);
-
-# include "libft.h"
-# include "ft_printf.h"
 
 /* Algorithm */
 bool		sort_block_bottom_a(t_stacks *stacks, t_lifo **tasks);

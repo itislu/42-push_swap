@@ -6,36 +6,36 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/18 13:27:26 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/26 22:03:03 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ***************************** CONFIGURATION ******************************** #
 
-NAME		:=		libft.a
+NAME			:=	libft.a
 
 # Header files directory:
-I			:=		inc/
+I				:=	inc/
 
 # Build directories:
-B			:=		build/
-D			:=		$B_dep/
-O			:=		$B_obj/
+B				:=	build/
+D				:=	$B_dep/
+O				:=	$B_obj/
 
 # Source files directory:
-S			:=		src/
+S				:=	src/
 
 # Makefiles in build/ directory with source file listings to be included
 # (files that are dependent on others need to be below their dependency):
-SOURCELISTS	:=		libft.mk \
+SOURCELISTS		:=	libft.mk \
 					ft_printf.mk \
 					get_next_line.mk \
 
 # Flags:
-CC			:=		cc
-CFLAGS		:=		-Wall -Wextra -Werror $(addprefix -I,$I)
-DEBUGFLAGS	:=		-g
-ARFLAGS		:=		rcs
+CC				:=	cc
+CFLAGS			?=	-Wall -Wextra -Werror $(addprefix -I,$I)
+DEBUGFLAGS		:=	-g
+ARFLAGS			:=	rcs
 
 # ***************************** BUILD PROCESS ******************************** #
 
