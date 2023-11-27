@@ -6,28 +6,28 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 12:59:51 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/26 13:03:09 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:26:50 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	asc(long value1, long value2)
+bool	asc(t_list_d *node1, t_list_d *node2)
 {
-	return (value1 <= value2);
+	return ((long) node1->content <= (long) node2->content);
 }
 
-bool	desc(long value1, long value2)
+bool	desc(t_list_d *node1, t_list_d *node2)
 {
-	return (value1 >= value2);
+	return ((long) node1->content >= (long) node2->content);
 }
 
-bool	asc_contig(long value1, long value2)
+bool	asc_contig(t_list_d *node1, t_list_d *node2)
 {
-	return (value1 + 1 == value2);
+	return (node1->pos_sorted + 1 == node2->pos_sorted);
 }
 
-bool	desc_contig(long value1, long value2)
+bool	desc_contig(t_list_d *node1, t_list_d *node2)
 {
-	return (value1 - 1 == value2);
+	return (node1->pos_sorted - 1 == node2->pos_sorted);
 }

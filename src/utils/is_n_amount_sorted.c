@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 23:38:30 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/25 23:38:31 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:27:06 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next)
 	while (n > 1)
 	{
 		next = get_next(cur);
-		if (next && !ord((long) cur->content, (long) next->content))
+		if (next && !ord(cur, next))
 			break ;
 		cur = next;
 		n--;

@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:17:02 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/27 01:00:09 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:31:29 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_lifo
 
 /* Function pointers */
 typedef t_list_d	*(*t_trv)(t_list_d *);
-typedef bool		(*t_cmp)(long, long);
+typedef bool		(*t_cmp)(t_list_d *, t_list_d *);
 
 /* Algorithm */
 bool		sort_block_bottom_a(t_stacks *stacks, t_lifo **tasks);
@@ -108,11 +108,11 @@ bool		is_n_amount_sorted(t_list_d *cur, int n, t_cmp ord, t_trv get_next);
 void		reset_pos_sorted(t_list_d *cur, t_trv get_next);
 
 /* Function pointers */
-bool		asc(long value1, long value2);
+bool		asc(t_list_d *node1, t_list_d *node2);
+bool		desc(t_list_d *node1, t_list_d *node2);
+bool		asc_contig(t_list_d *node1, t_list_d *node2);
+bool		desc_contig(t_list_d *node1, t_list_d *node2);
 void		del(void *nothing);
-bool		desc(long value1, long value2);
-bool		asc_contig(long value1, long value2);
-bool		desc_contig(long value1, long value2);
 t_list_d	*get_next(t_list_d *node);
 t_list_d	*get_prev(t_list_d *node);
 
