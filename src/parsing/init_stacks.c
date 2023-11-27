@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 23:46:26 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/27 00:37:44 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/27 12:38:38 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int	put_input_into_stack_a(int argc, char *argv[], t_list_d **top_a)
 		input = ft_strtok(argv[i], WHITESPACE);
 		while (input)
 		{
-			count++;
 			new_node = ft_lstnew_d((void *) ft_atol(input));
 			if (new_node)
 			{
-				new_node->pos_origin = count;
+				new_node->pos_origin = ++count;
+				new_node->pos_sorted = 0;
 				ft_lstadd_back_d(top_a, new_node);
 			}
 			else
