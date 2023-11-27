@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define WHITESPACE " \f\n\r\t\v"
+
 typedef struct s_list
 {
 	void			*content;

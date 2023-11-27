@@ -6,14 +6,15 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:12:35 by ldulling          #+#    #+#             */
-/*   Updated: 2023/11/14 11:45:40 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/26 23:22:24 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\f' || c == '\n'
-		|| c == '\r' || c == '\t' || c == '\v')
+	if (ft_strchr(WHITESPACE, c))
 		return (1);
 	else
 		return (0);
