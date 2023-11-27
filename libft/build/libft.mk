@@ -82,6 +82,7 @@ SUBDIR	:=	numbers/
 TMP		+=	$(addprefix $(DIR)$(SUBDIR), \
 			ft_atof.c \
 			ft_atoi.c \
+			ft_atol.c \
 )
 
 #  Put:

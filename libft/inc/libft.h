@@ -76,6 +76,7 @@ void		*ft_memset(void *s, int c, size_t n);
 /* Numbers */
 double		ft_atof(const char *nptr);
 int			ft_atoi(const char *nptr);
+long		ft_atol(const char *nptr);
 
 /* Put */
 void		ft_putchar_fd(char c, int fd);
