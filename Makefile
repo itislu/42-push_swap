@@ -118,8 +118,8 @@ fclean			:	clean
 ifeq (,$(filter debug,$(MAKECMDGOALS)))
 	@				make -C $L fclean --no-print-directory
 endif
-ifneq (,$(wildcard $B.last_target))
-					rm -f $B.last_target
+ifneq (,$(wildcard $B.previous_goal))
+					rm -f $B.previous_goal
 endif
 ifneq (,$(wildcard $(NAME)))
 					rm -f $(NAME)
@@ -130,7 +130,7 @@ re				:	fclean all
 debug			:	CFLAGS += $(DEBUGFLAGS)
 ifneq ($(PREVIOUS_GOAL),debug)
 debug			:	debuglib re
-	@				echo "$@" > $B.last_target
+	@				echo "$@" > $B.previous_goal
 else
 export				CFLAGS
 debug			:	all
