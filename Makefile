@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/18 13:27:46 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/27 10:57:43 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ NAME			:=	push_swap
 # Header files directories:
 I				:=	inc/ libft/inc/
 
-#TODO: find names and see if I will create a lib/ directory
 #
 L				:=	libft/
 l				:=	ft
@@ -52,16 +51,14 @@ OBJ				:=	$(SRC:%.c=$O%.o)
 SUBDIRS_D		:=	$(sort $(dir $(DEP)))
 SUBDIRS_O		:=	$(sort $(dir $(OBJ)))
 
-#TODO: test if := works too
-LAST_TARGET		=	$(shell cat $B.last_target 2>/dev/null)
+PREVIOUS_GOAL	=	$(shell cat $B.previous_goal 2>/dev/null)
 
 export 				MAKECMDGOALS
 
-#TODO: test if dir still works with file called "dir" existing (bc of the tabs)
 .PHONY			:	all bonus lib cleandep cleanobj clean fclean re debug debuglib \
 					norm print-% dir
 
-ifneq ($(LAST_TARGET),$(filter $(LAST_TARGET),$(MAKECMDGOALS)))
+ifneq ($(PREVIOUS_GOAL),$(filter $(PREVIOUS_GOAL),$(MAKECMDGOALS)))
 all				:	fclean lib $(NAME)
     ifeq (,$(filter debug,$(MAKECMDGOALS)))
 	@				echo "Last target was debug, so recompiled everything."
@@ -111,7 +108,7 @@ ifneq (,$(wildcard $O))
 endif
 
 clean			:	cleandep cleanobj
-ifneq ($(LAST_TARGET),debug)
+ifneq ($(PREVIOUS_GOAL),debug)
     ifeq (,$(filter fclean re debug,$(MAKECMDGOALS)))
 	@				make -C $L clean --no-print-directory
     endif
@@ -131,7 +128,7 @@ endif
 re				:	fclean all
 
 debug			:	CFLAGS += $(DEBUGFLAGS)
-ifneq ($(LAST_TARGET),debug)
+ifneq ($(PREVIOUS_GOAL),debug)
 debug			:	debuglib re
 	@				echo "$@" > $B.last_target
 else
@@ -145,7 +142,6 @@ debuglib		:
 dir				:
 					mkdir $B $I $L $S
 
-#TODO: align with the other Makefiles
 norm			:
 	@				-norminette -R CheckForbiddenSourceHeader -R CheckDefine \
 					$(addprefix $S,$(SRC)) $(foreach dir,$I,$(dir)*.h)

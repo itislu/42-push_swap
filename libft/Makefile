@@ -6,7 +6,7 @@
 #    By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 12:48:32 by ldulling          #+#    #+#              #
-#    Updated: 2023/11/26 22:03:03 by ldulling         ###   ########.fr        #
+#    Updated: 2023/11/27 10:57:01 by ldulling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,6 @@ re				:	fclean all
 debug			:	CFLAGS += $(DEBUGFLAGS)
 debug			:	re
 
-#TODO: prolly need to change the message now
 norm			:
 	@				read -p "Press Enter to check $$(basename "$$(pwd)")..." \
 					userInput;
