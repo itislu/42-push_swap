@@ -23,15 +23,6 @@
 # define BOTTOM_B 3
 
 /* Structs */
-typedef struct s_list_d
-{
-	void			*content;
-	int				pos_origin;
-	int				pos_sorted;
-	struct s_list_d	*prev;
-	struct s_list_d	*next;
-}	t_list_d;
-
 typedef struct s_stacks
 {
 	t_list_d	*top_a;

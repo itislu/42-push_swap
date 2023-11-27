@@ -6,7 +6,7 @@
 /*   By: ldulling <ldulling@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:04:35 by ldulling          #+#    #+#             */
-/*   Updated: 2023/09/24 16:22:02 by ldulling         ###   ########.fr       */
+/*   Updated: 2023/11/27 00:18:44 by ldulling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	lstadd_back_eff(t_list **head, t_list **tail, t_list **new_node)
 	if (*head == NULL)
 		*head = *new_node;
 	else
-		(*tail)-> next = *new_node;
+		(*tail)->next = *new_node;
 	*tail = *new_node;
 	return ;
 }
