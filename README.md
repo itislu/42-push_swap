@@ -24,3 +24,10 @@ https://github.com/user-attachments/assets/dc711998-4196-43be-aaba-a8caa8d2ece1
 https://github.com/user-attachments/assets/2b5e878d-950a-4966-9483-ea2bd1ce541e
 
 </div>
+
+---
+
+## References
+
+- [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
+- [push_swap_tester](https://github.com/lorenuars19/push_swap_tester)
