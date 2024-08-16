@@ -18,11 +18,11 @@ NAME			:=	push_swap
 # Header files directories:
 I				:=	inc/ libft/inc/
 
-#
+# Libraries
 L				:=	libft/
 l				:=	ft
 
-# Build direcoties:
+# Build directories:
 B				:=	build/
 D				:=	$B_dep/
 O				:=	$B_obj/
